@@ -13,7 +13,7 @@ public class MainActivity2_question3 extends AppCompatActivity {
         setContentView(R.layout.activity_main_activity2_question3);
         //
         //bouton d'arret de l'activité
-        Button stop = (Button) findViewById(R.id.bntexit_q_1_3);
+        Button stop = (Button) findViewById(R.id.bntexit_q3);
         stop.setOnClickListener(view -> {
             this.finish();
         });

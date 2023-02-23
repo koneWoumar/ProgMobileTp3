@@ -18,13 +18,7 @@ import java.util.HashMap;
 
 public class MainActivity2_question7 extends AppCompatActivity {
 
-    //la liste des region
-    //ArrayList<String> listeRegion = new ArrayList<String>();
-    //la listeview
-    //ListView listViewRegion;
-    //l'adaptateur de la listeview
-    //ArrayAdapter<String> listViewRegionAdapter ;
-    //
+
     ArrayList<HashMap<String,String>> arrayList=new ArrayList<>();
     ListView simpleListView;
 
@@ -33,15 +27,15 @@ public class MainActivity2_question7 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity2_question7);
         //bouton d'arret de l'activité
-        Button stop = (Button) findViewById(R.id.bntexit_q_7);
+        Button stop = (Button) findViewById(R.id.bntexit_q7);
         stop.setOnClickListener(view -> {
             this.finish();
         });
 
         //bouton ajouter
-        Button add = (Button) findViewById(R.id.btn_ajouter_question7);
+        Button add = (Button) findViewById(R.id.btn_add_q7);
         add.setOnClickListener(view -> {
-            LinearLayout cadre = findViewById(R.id.listview_question7);
+            LinearLayout cadre = findViewById(R.id.conteneur);
             View item = getLayoutInflater().inflate(R.layout.item_child_question7,null);
             cadre.addView(item);
         });
@@ -59,41 +53,4 @@ public class MainActivity2_question7 extends AppCompatActivity {
         //
          */
     }
-
-    private void chargerList(){
-        //
-        HashMap<String,String> hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
-        hashMap.put("item_name","file1");
-        hashMap.put("button_sup","sup");
-        arrayList.add(hashMap);//add the hashmap into arrayList
-        //
-        hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
-        hashMap.put("item_name","file2");
-        hashMap.put("button_sup","sup");
-        arrayList.add(hashMap);
-        //
-        hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
-        hashMap.put("item_name","file3");
-        hashMap.put("button_sup","sup");
-        arrayList.add(hashMap);
-        //
-    }
-    /*
-    private void setButtonEventListner(){
-        ListView listview = findViewById(R.id.listview_question7);
-        int child_number = listview.getCount();
-        for(int i=0;i<1;i++){
-            //
-            RelativeLayout item = (RelativeLayout) listview.getChildAt(i);
-            Button btnsup = (Button) item.findViewById(R.id.button_sup);
-
-            TextView item_text_view = (TextView) item.findViewById(R.id.item_name);
-            //
-            btnsup.setOnClickListener(views -> {
-                String file_name = item_text_view.getText().toString();
-                Toast.makeText(this,file_name,Toast.LENGTH_LONG).show();
-            });
-        }
-
-    } */
 }

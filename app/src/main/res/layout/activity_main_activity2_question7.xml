@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/titre_q_7"
+        android:id="@+id/titre_q7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -24,11 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical"
-        android:layout_below="@+id/titre_q_7"
+        android:layout_below="@+id/titre_q7"
         android:padding="5dp">
 
         <TextView
-            android:id="@+id/titre_text_content_q_7"
+            android:id="@+id/titre_text_content_q7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -37,7 +37,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/nom_fichier"
+            android:id="@+id/file_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -51,7 +51,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_ajouter_question7"
+                android:id="@+id/btn_add_q7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
@@ -62,7 +62,7 @@
     </LinearLayout>
 
     <ScrollView
-        android:id="@+id/listview_question"
+        android:id="@+id/scrollview"
         android:layout_width="399dp"
         android:layout_height="273dp"
         android:layout_below="@+id/cadre_ajout_item"
@@ -72,7 +72,7 @@
         android:layout_marginBottom="10dp">
 
         <LinearLayout
-            android:id="@+id/listview_question7"
+            android:id="@+id/conteneur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -82,7 +82,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/bntexit_q_7"
+        android:id="@+id/bntexit_q7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

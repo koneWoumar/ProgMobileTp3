@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity2_question7"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="8dp"
+        android:layout_height="38dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:text="TextView"
+                android:gravity="center_vertical"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/button_sup"
+                android:layout_alignParentRight="true"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:text="Delete" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

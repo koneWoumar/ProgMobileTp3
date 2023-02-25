@@ -60,7 +60,7 @@ public class MainActivity2_question7 extends AppCompatActivity {
         //
         for(String file_name:file_name_list){
             //LinearLayout cadre = findViewById(R.id.conteneur);
-            View item = getLayoutInflater().inflate(R.layout.item_child_question7,null);// recuperation du layout item
+            View item = getLayoutInflater().inflate(R.layout.item_file_question7,null);// recuperation du layout item
             TextView item_text = item.findViewById(R.id.item_name); //getting the textview of the item card to be shown
             item_text.setText(file_name);//setting the name of file to the item text
 

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -64,7 +63,7 @@ public class MainActivity2_question_6 extends AppCompatActivity {
         //
         String[] from={"item_name","button_sup"};//string array
         int[] to={R.id.item_name};//int array of views id's
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this,arrayList,R.layout.item_file_question,from,to);
+        SimpleAdapter simpleAdapter = new SimpleAdapter(this,arrayList,R.layout.item_file_question_5_6,from,to);
         simpleListView.setAdapter(simpleAdapter);//sets the adapter for listView
         //
     }

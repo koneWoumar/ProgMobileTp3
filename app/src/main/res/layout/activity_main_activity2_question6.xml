@@ -19,7 +19,7 @@
 
 
     <LinearLayout
-        android:layout_width="377dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
@@ -36,7 +36,7 @@
         <EditText
             android:id="@+id/nom_fichier_q6"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="65dp"
             android:gravity="center"
             android:text="contenu du fichier_q_6"
             android:textColor="#88ffff00"
@@ -61,7 +61,7 @@
     <ListView
         android:id="@+id/listview_q6"
         android:layout_width="match_parent"
-        android:layout_height="247dp"
+        android:layout_height="287dp"
         android:layout_gravity="center"
         android:layout_margin="10dp" />
     <Button

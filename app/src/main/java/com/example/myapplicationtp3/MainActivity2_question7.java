@@ -19,9 +19,6 @@ import java.util.HashMap;
 public class MainActivity2_question7 extends AppCompatActivity {
 
 
-    ArrayList<HashMap<String,String>> arrayList=new ArrayList<>();
-    ListView simpleListView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

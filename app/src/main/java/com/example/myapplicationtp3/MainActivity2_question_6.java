@@ -3,17 +3,18 @@ package com.example.myapplicationtp3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity2_question_6 extends AppCompatActivity {
-    //la liste des region
-    //ArrayList<String> listeRegion = new ArrayList<String>();
-    //la listeview
-    //ListView listViewRegion;
-    //l'adaptateur de la listeview
-    //ArrayAdapter<String> listViewRegionAdapter ;
+
+    ArrayList<HashMap<String,String>> arrayList=new ArrayList<>();
+    ListView simpleListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,19 +25,18 @@ public class MainActivity2_question_6 extends AppCompatActivity {
         stop.setOnClickListener(view -> {
             this.finish();
         });
-         /*
-        //code test
+        //
         this.chargerList();
         //
-        simpleListView=(ListView)findViewById(R.id.listview_question7);
+        simpleListView=(ListView)findViewById(R.id.listview_q6);
         String[] from={"item_name","button_sup"};//string array
         int[] to={R.id.item_name,R.id.button_sup};//int array of views id's
         SimpleAdapter simpleAdapter = new SimpleAdapter(this,arrayList,R.layout.item_child_question7,from,to);
         simpleListView.setAdapter(simpleAdapter);//sets the adapter for listView
         //
-         */
+
     }
-    /*
+
     private void chargerList(){
         //
         HashMap<String,String> hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
@@ -55,6 +55,5 @@ public class MainActivity2_question_6 extends AppCompatActivity {
         arrayList.add(hashMap);
         //
     }
-    
-     */
+
 }

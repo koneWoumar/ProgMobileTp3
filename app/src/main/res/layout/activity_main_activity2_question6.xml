@@ -59,7 +59,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listview_q_6"
+        android:id="@+id/listview_q6"
         android:layout_width="match_parent"
         android:layout_height="247dp"
         android:layout_gravity="center"

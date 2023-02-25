@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,9 +40,15 @@ public class MainActivity2_question_6 extends AppCompatActivity {
         this.chargerListView();
         //button addfile
         addfile.setOnClickListener( view -> {
-            String contenu_champs_text = champ_text.getText().toString();
-            this.creatFile(contenu_champs_text);
-            this.chargerListView();
+            if(champ_text.getText().toString().equals("")){
+                Toast.makeText(this,"please type file name first",Toast.LENGTH_LONG).show();
+            }
+            else{
+                String contenu_champs_text = champ_text.getText().toString();
+                this.creatFile(contenu_champs_text);
+                this.chargerListView();
+                champ_text.setText("");
+            }
         });
 
         //bouton d'arret de l'activité

@@ -24,10 +24,10 @@ public class MainActivity2_question3 extends AppCompatActivity {
         setContentView(R.layout.activity_main_activity2_question3);
 
         //Verification et creation du fichier : question 1
-        String filename ="konewolouhooumar_angorakouame"; //concatenation des noms des binomes
+        String filename ="Kone_Angora"; //concatenation des noms des binomes
         this.createFileIfNoteExiste(filename);
         //Ecriture dans le fichier question 2
-        String contents = "Hello world!";
+        String contents = "Bonjour JOHANN Bourcier";
         this.writeToFile(contents,filename);
         //Lecture du fichier du fichier question3
         String fileContent = readContentOfFile(filename);

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,7 +25,7 @@ public class MainActivity2_question_4 extends AppCompatActivity {
         setContentView(R.layout.activity_main_activity2_question4);
         //
         EditText champ_text = findViewById(R.id.content_q4);
-        String filename ="konewolouhooumar_angorakouame";
+        String filename ="Kone_Angora";
         //pré-remplissage du contenu du champs text avec le contenu du fichier creer en question 1-3
         this.createFileIfNoteExiste(filename); //creation du fichier s'il n'existe pas
         String content_of_file = this.readContentOfFile(filename);

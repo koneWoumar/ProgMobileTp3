@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Name of file to be added"
+            android:text="Enter file name"
             android:textColor="#88ffff00"
             android:textSize="20dp" />
 
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:gravity="center"
-            android:text="contenu du fichier_q_6"
+            android:text=""
             android:textColor="#88ffff00"
             android:textSize="15dp" />
 

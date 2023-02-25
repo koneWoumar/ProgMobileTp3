@@ -47,9 +47,15 @@ public class MainActivity2_question7 extends AppCompatActivity {
 
         //bouton d'ajout de fichier
         addfile.setOnClickListener(view -> {
-            String nom_file=champ_text.getText().toString();
-            this.creatFileInAppContext(nom_file);
-            this.chargerListView();
+            if(champ_text.getText().toString().equals("")){
+                Toast.makeText(this,"please type file name first",Toast.LENGTH_LONG).show();
+            }
+            else{
+                String nom_file=champ_text.getText().toString();
+                champ_text.setText("");
+                this.creatFileInAppContext(nom_file);
+                this.chargerListView();
+            }
         });
     }
     //methode qui charge la liste des fichier dans la listview

@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/titre_q_1_3"
+        android:background="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -16,6 +17,17 @@
         android:textColor="#88ffff00"
         android:textSize="35dp" />
 
+
+    <Button
+        android:id="@+id/bntgotoq4"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cadre_text"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Go to question 4" />
 
     <LinearLayout
         android:id="@+id/cadre_text"
@@ -34,7 +46,6 @@
             android:layout_height="48dp"
             android:gravity="center"
             android:text="contenu du fichier"
-            android:textColor="#88ffff00"
             android:textSize="20dp" />
 
         <TextView
@@ -43,7 +54,6 @@
             android:layout_height="147dp"
             android:gravity="center"
             android:text="contenu du fichier"
-            android:textColor="#88ffff00"
             android:textSize="15dp" />
     </LinearLayout>
 

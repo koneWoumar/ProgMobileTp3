@@ -3,6 +3,7 @@ package com.example.myapplicationtp3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,12 +39,18 @@ public class MainActivity2_question3 extends AppCompatActivity {
         stop.setOnClickListener(view -> {
             this.finish();
         });
+        //button de lancement de l'activity question4
+        Button btngotoq4 = (Button) findViewById(R.id.bntgotoq4);
+        btngotoq4.setOnClickListener(view -> {
+            Intent question_4_ActivityIntent = new Intent(MainActivity2_question3.this, MainActivity2_question_4.class);
+            startActivity(question_4_ActivityIntent);
+        });
     }
     //methode qui cree un fichier s'il existe pas dans le contexte de l'application
     private void createFileIfNoteExiste(String filename){
         Context context = getApplicationContext(); // contexte de l'application
-        File file = new File(context.getFilesDir(), filename); //onbtention du fichier
-        if(!file.exists()){
+        File file = new File(context.getFilesDir(), filename); //onbtention d'un object File du  fichier
+        if(!file.exists()){ //si le fichier n'existe pas
             try {
                 file.createNewFile(); //creation du fichier s'il n'existe pas
             } catch (IOException e) {

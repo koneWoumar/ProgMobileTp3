@@ -8,10 +8,11 @@
     tools:context=".MainActivity2_question_6">
 
     <TextView
-        android:id="@+id/titre_q_6"
+        android:id="@+id/titre_q6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@color/black"
         android:text="EXERCICE 6"
         android:textColor="#88ffff00"
         android:layout_marginBottom="10dp"
@@ -19,27 +20,25 @@
 
 
     <LinearLayout
-        android:layout_width="377dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/titre_text_content_q_6"
+            android:id="@+id/content_q6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Name of file to be added"
-            android:textColor="#88ffff00"
+            android:text="Enter file name"
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/nom_fichier_q_6"
+            android:id="@+id/nom_fichier_q6"
             android:layout_width="match_parent"
-            android:layout_height="51dp"
+            android:layout_height="65dp"
             android:gravity="center"
-            android:text="contenu du fichier_q_6"
-            android:textColor="#88ffff00"
+            android:text=""
             android:textSize="15dp" />
 
         <LinearLayout
@@ -48,7 +47,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_ajouter_q_6"
+                android:id="@+id/btn_add_q6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
@@ -59,13 +58,13 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listview_q_6"
+        android:id="@+id/listview_q6"
         android:layout_width="match_parent"
-        android:layout_height="247dp"
+        android:layout_height="287dp"
         android:layout_gravity="center"
         android:layout_margin="10dp" />
     <Button
-        android:id="@+id/bntexit_q_6"
+        android:id="@+id/bntexit_q6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

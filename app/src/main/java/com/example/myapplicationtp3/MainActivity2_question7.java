@@ -3,9 +3,11 @@ package com.example.myapplicationtp3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -13,87 +15,88 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MainActivity2_question7 extends AppCompatActivity {
 
-    //la liste des region
-    //ArrayList<String> listeRegion = new ArrayList<String>();
-    //la listeview
-    //ListView listViewRegion;
-    //l'adaptateur de la listeview
-    //ArrayAdapter<String> listViewRegionAdapter ;
-    //
-    ArrayList<HashMap<String,String>> arrayList=new ArrayList<>();
-    ListView simpleListView;
+    Context context ;
+    LinearLayout contener;
+    Button addfile ;
+    Button stopActivity ;
+    EditText champ_text ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_activity2_question7);
+        //
+        context = getApplicationContext();
+        addfile = (Button) findViewById(R.id.btn_add_q7) ;
+        stopActivity = (Button) findViewById(R.id.bntexit_q7);
+        champ_text = findViewById(R.id.file_name);
+        contener = findViewById(R.id.conteneur);
+        //
+        this.chargerListView(); //pre_chargement du conteneur avec la liste des fichier du context de l'app
         //bouton d'arret de l'activité
-        Button stop = (Button) findViewById(R.id.bntexit_q_7);
-        stop.setOnClickListener(view -> {
+        stopActivity.setOnClickListener(view -> {
             this.finish();
         });
 
-        //bouton ajouter
-        Button add = (Button) findViewById(R.id.btn_ajouter_question7);
-        add.setOnClickListener(view -> {
-            LinearLayout cadre = findViewById(R.id.listview_question7);
-            View item = getLayoutInflater().inflate(R.layout.item_child_question7,null);
-            cadre.addView(item);
+        //bouton d'ajout de fichier
+        addfile.setOnClickListener(view -> {
+            if(champ_text.getText().toString().equals("")){
+                Toast.makeText(this,"please type file name first",Toast.LENGTH_LONG).show();
+            }
+            else{
+                String nom_file=champ_text.getText().toString();
+                champ_text.setText("");
+                this.creatFileInAppContext(nom_file);
+                this.chargerListView();
+            }
         });
-        //
-
-        /*
-        //code test
-        this.chargerList();
-        //
-        simpleListView=(ListView)findViewById(R.id.listview_question7);
-        String[] from={"item_name","button_sup"};//string array
-        int[] to={R.id.item_name,R.id.button_sup};//int array of views id's
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this,arrayList,R.layout.item_child_question7,from,to);
-        simpleListView.setAdapter(simpleAdapter);//sets the adapter for listView
-        //
-         */
     }
+    //methode qui charge la liste des fichier dans la listview
+    private void chargerListView(){
+        //
+        String[] file_name_list = context.fileList(); // obtening the list of file in the app context
+        contener.removeAllViews();//vider le conteneur layout ici
+        //
+        for(String file_name:file_name_list){
+            //LinearLayout cadre = findViewById(R.id.conteneur);
+            View item = getLayoutInflater().inflate(R.layout.item_file_question7,null);// recuperation du layout item
+            TextView item_text = item.findViewById(R.id.item_name); //getting the textview of the item card to be shown
+            item_text.setText(file_name);//setting the name of file to the item text
 
-    private void chargerList(){
-        //
-        HashMap<String,String> hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
-        hashMap.put("item_name","file1");
-        hashMap.put("button_sup","sup");
-        arrayList.add(hashMap);//add the hashmap into arrayList
-        //
-        hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
-        hashMap.put("item_name","file2");
-        hashMap.put("button_sup","sup");
-        arrayList.add(hashMap);
-        //
-        hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
-        hashMap.put("item_name","file3");
-        hashMap.put("button_sup","sup");
-        arrayList.add(hashMap);
-        //
-    }
-    /*
-    private void setButtonEventListner(){
-        ListView listview = findViewById(R.id.listview_question7);
-        int child_number = listview.getCount();
-        for(int i=0;i<1;i++){
-            //
-            RelativeLayout item = (RelativeLayout) listview.getChildAt(i);
-            Button btnsup = (Button) item.findViewById(R.id.button_sup);
-
-            TextView item_text_view = (TextView) item.findViewById(R.id.item_name);
-            //
-            btnsup.setOnClickListener(views -> {
-                String file_name = item_text_view.getText().toString();
-                Toast.makeText(this,file_name,Toast.LENGTH_LONG).show();
+            Button item_btn_sup = (Button) item.findViewById(R.id.button_sup);//getting the delete button on the item card
+            item_btn_sup.setOnClickListener(view -> {
+                this.deleteFileInAppContext(file_name);
+                this.chargerListView();
             });
-        }
 
-    } */
+            contener.addView(item);
+        }
+    }
+    //
+    //methode qui cree un fichier dans le contexte de l'application
+    private void creatFileInAppContext(String file_name){
+        File file = new File(context.getFilesDir(), file_name); //onbtention du fichier
+        if(!file.exists()){
+            try {
+                file.createNewFile(); //creation du fichier s'il n'existe pas
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    //
+    //methode qui supprime un fichier dans le contexte de l'application
+    private void deleteFileInAppContext(String file_name){
+        File file = new File(context.getFilesDir(), file_name); //onbtention du fichier
+        if(file.exists()){
+            file.delete(); // suppression du fichier s'il existe
+        }
+    }
 }

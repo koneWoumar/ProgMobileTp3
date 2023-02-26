@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(question_3_ActivityIntent);
         });
 
-
         //
         //button de lancement de l'activity
         Button btngotoq4 = (Button) findViewById(R.id.bntgotoq4);
